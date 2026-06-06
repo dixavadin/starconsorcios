@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "u-1",
+      "nome": "Administrador Geral",
+      "email": "admin",
+      "role": "ADMIN",
+      "senha": "admin@123",
+      "telefone": "(11) 99999-9999",
+      "cpf": "000.000.000-00",
+      "percentual_comissao": 1.5
+    }
+  ],
+  "leads": [],
+  "interacoes": [],
+  "vendas": [],
+  "configuracoes": {
+    "empresa": "Star Consórcios",
+    "logo": "",
+    "percentual_padrao": 1.5,
+    "distribuicao_automatica": false
+  }
+}

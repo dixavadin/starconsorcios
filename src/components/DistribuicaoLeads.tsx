@@ -163,7 +163,7 @@ export default function DistribuicaoLeads() {
                 <optgroup label="Aguardando Vendedor (Pendentes)">
                   {unassignedLeads.map(l => (
                     <option key={l.id} value={l.id}>
-                      {l.nome} ({l.produto_interesse} - {formatCurrency(l.valor_estimado)})
+                      {l.nome} ({l.produto_interesse})
                     </option>
                   ))}
                 </optgroup>
@@ -244,7 +244,7 @@ export default function DistribuicaoLeads() {
                       <td className="px-6 py-3.5">
                         <div className="font-semibold text-slate-800">{lead.nome}</div>
                         <div className="text-[11px] text-slate-450 mt-0.5 truncate max-w-[200px]" title={lead.produto_interesse}>
-                          {lead.produto_interesse} - <span className="font-bold text-[#2563EB]">{formatCurrency(lead.valor_estimado)}</span>
+                          {lead.produto_interesse}
                         </div>
                       </td>
 

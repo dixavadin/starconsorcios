@@ -141,7 +141,7 @@ export default function ComissoesVendedor({ user }: ComissoesVendedorProps) {
                 <tr className="border-b border-slate-100 bg-slate-50 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
                   <th className="px-6 py-4">Data Venda</th>
                   <th className="px-6 py-4">Proponente (Cliente)</th>
-                  <th className="px-6 py-4">Produto / Cota</th>
+                  <th className="px-6 py-4">Interesse</th>
                   <th className="px-6 py-4 text-right">Valor Venda</th>
                   <th className="px-6 py-4 text-center">Taxa (%)</th>
                   <th className="px-6 py-4 text-right">Comissão Líquida</th>

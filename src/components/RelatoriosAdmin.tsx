@@ -345,8 +345,8 @@ export default function RelatoriosAdmin() {
                   <div className="text-lg font-bold text-slate-800">{list.length}</div>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-105 text-center">
-                  <span className="text-[10px] uppercase font-bold text-slate-400">Previsão Fechamento</span>
-                  <div className="text-lg font-bold text-blue-850">{formatCurrency(totalEstimado)}</div>
+                  <span className="text-[10px] uppercase font-bold text-slate-400">Leads Sem Atribuição</span>
+                  <div className="text-lg font-bold text-blue-850">{list.filter(item => !item.vendedor_id).length}</div>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-105 text-center">
                   <span className="text-[10px] uppercase font-bold text-slate-400">Atendimento Ativo</span>
@@ -365,7 +365,7 @@ export default function RelatoriosAdmin() {
                   <thead>
                     <tr className="border-b bg-slate-50 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                       <th className="p-3">Cliente</th>
-                      <th className="p-3">Cota/Interesse</th>
+                      <th className="p-3">Interesse</th>
                       <th className="p-3">Data Captação</th>
                       <th className="p-3">Responsável</th>
                       <th className="p-3">Status</th>
@@ -379,7 +379,6 @@ export default function RelatoriosAdmin() {
                           <td className="p-3 font-semibold text-slate-700">{item.nome} <br/><span className="text-[10px] font-medium text-slate-400">{item.telefone || item.email}</span></td>
                           <td className="p-3">
                             <span className="font-semibold text-slate-700 block">{item.produto_interesse}</span>
-                            <span className="text-[#2563EB] font-bold">{formatCurrency(item.valor_estimado)}</span>
                           </td>
                           <td className="p-3 text-slate-500 font-mono">{new Date(item.data_criacao).toLocaleDateString('pt-BR')}</td>
                           <td className="p-3 font-medium text-slate-600">{v ? v.nome : 'Sem Atribuição'}</td>
@@ -432,7 +431,7 @@ export default function RelatoriosAdmin() {
                       <th className="p-3">Data</th>
                       <th className="p-3">Cliente</th>
                       <th className="p-3">Consultor Vendedor</th>
-                      <th className="p-3">Cota Adquirida</th>
+                      <th className="p-3">Interesse</th>
                       <th className="p-3 text-right">Valor Venda</th>
                       <th className="p-3 text-right">Comissão ({totalComPct}%)</th>
                     </tr>
@@ -491,7 +490,7 @@ export default function RelatoriosAdmin() {
                     <tr className="border-b bg-slate-50 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                       <th className="p-3">Consultor Vendedor</th>
                       <th className="p-3">Cliente Assinado</th>
-                      <th className="p-3">Cota Vendida</th>
+                      <th className="p-3">Interesse Vendido</th>
                       <th className="p-3 text-right">Valor Venda</th>
                       <th className="p-3 text-center">Percentual (%)</th>
                       <th className="p-3 text-right">Comissão</th>

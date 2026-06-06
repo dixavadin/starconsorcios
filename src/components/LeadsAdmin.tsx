@@ -104,7 +104,7 @@ export default function LeadsAdmin() {
     setFormNome('');
     setFormTelefone('');
     setFormEmail('');
-    setFormProduto('Consórcio Imobiliário - R$ 200k');
+    setFormProduto('Imóvel');
     setFormValor('200000');
     setFormStatus('Novo');
     setFormVendedorId('');
@@ -346,7 +346,7 @@ export default function LeadsAdmin() {
               <thead>
                 <tr className="border-b border-slate-100 bg-slate-50/50 text-[11px] font-bold text-slate-450 uppercase tracking-widest">
                   <th className="px-6 py-4.5">Cliente</th>
-                  <th className="px-6 py-4.5">Cota / Interesse</th>
+                  <th className="px-6 py-4.5">Interesse</th>
                   <th className="px-6 py-4.5">Status</th>
                   <th className="px-6 py-4.5">Consultor Atribuído</th>
                   <th className="px-6 py-4.5 text-right">Ações</th>
@@ -375,11 +375,7 @@ export default function LeadsAdmin() {
                         <div className="font-semibold text-slate-700 max-w-[220px] truncate" title={lead.produto_interesse}>
                           {lead.produto_interesse}
                         </div>
-                        <div className="flex items-center gap-1.5 mt-1 font-bold text-[#2563EB] text-sm">
-                          <Coins className="h-3.5 w-3.5 text-blue-400" />
-                          <span>{formatCurrency(lead.valor_estimado)}</span>
-                        </div>
-                        <span className="text-[10px] text-slate-400 mt-0.5 block font-medium">
+                        <span className="text-[10px] text-slate-400 mt-1 block font-medium">
                           Cadastrado em: {new Date(lead.data_criacao).toLocaleDateString('pt-BR')}
                         </span>
                       </td>
@@ -519,32 +515,21 @@ export default function LeadsAdmin() {
               </div>
 
               {/* Produto e Valor */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
-                    Cota / Tipo Interesse
+                    Tipo de Interesse
                   </label>
-                  <input
-                    type="text"
+                  <select
                     required
-                    placeholder="Ex: Consórcio Toyota Corolla R$ 130k"
-                    className="block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-sm focus:border-[#2563EB] focus:outline-hidden"
+                    className="block w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:border-[#2563EB] focus:outline-hidden bg-white"
                     value={formProduto}
                     onChange={(e) => setFormProduto(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
-                    Valor Estimado (R$)
-                  </label>
-                  <input
-                    type="number"
-                    required
-                    placeholder="Ex: 130000"
-                    className="block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-sm focus:border-[#2563EB] focus:outline-hidden"
-                    value={formValor}
-                    onChange={(e) => setFormValor(e.target.value)}
-                  />
+                  >
+                    <option value="Imóvel">Imóvel</option>
+                    <option value="Veículo">Veículo</option>
+                    <option value="Moto">Moto</option>
+                  </select>
                 </div>
               </div>
 

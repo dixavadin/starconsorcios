@@ -13,6 +13,7 @@ import { User } from './types';
 
 // Page components imports
 import Layout from './components/Layout';
+import CadastroPublico from './components/CadastroPublico';
 import Login from './components/Login';
 import DashboardAdmin from './components/DashboardAdmin';
 import DashboardVendedor from './components/DashboardVendedor';
@@ -93,6 +94,9 @@ export default function App() {
       <Toaster position="top-right" closeButton richColors theme="light" />
       
       <Routes>
+        {/* Public Campaign Leads Registration Form */}
+        <Route path="/cadastro" element={<CadastroPublico />} />
+
         {/* Public Login Route */}
         <Route 
           path="/" 

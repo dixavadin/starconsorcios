@@ -298,10 +298,6 @@ export default function LeadsVendedor({ user }: LeadsVendedorProps) {
                       {columnLeads.length}
                     </span>
                   </div>
-                  {/* Pipeline financial volume summary */}
-                  <div className="text-[9px] text-slate-400 font-bold mt-1 font-mono">
-                    {formatCurrency(columnSum)}
-                  </div>
                 </div>
 
                 {/* Draggable Cards Holder */}
@@ -327,9 +323,6 @@ export default function LeadsVendedor({ user }: LeadsVendedorProps) {
                             </h5>
                             <div className="text-[9px] text-slate-400 font-medium truncate max-w-full" title={lead.produto_interesse}>
                               {lead.produto_interesse}
-                            </div>
-                            <div className="font-black text-[#2563EB] text-[10px] mt-0.5">
-                              {formatCurrency(lead.valor_estimado)}
                             </div>
                           </div>
 

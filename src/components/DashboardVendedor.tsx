@@ -236,7 +236,6 @@ export default function DashboardVendedor({ user }: DashboardVendedorProps) {
                         <div className="text-slate-600 font-medium truncate max-w-[160px]" title={lead.produto_interesse}>
                           {lead.produto_interesse}
                         </div>
-                        <div className="text-xs font-bold text-slate-500">{formatCurrency(lead.valor_estimado)}</div>
                       </td>
                       <td className="py-2.5 text-right">
                         {getStatusBadge(lead.status)}

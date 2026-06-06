@@ -21,158 +21,25 @@ if (!fs.existsSync(dbDir)) {
 // System Seeds
 const defaultSeed: DatabaseState = {
   users: [
-    { id: 'u-1', nome: 'Admin Geral', email: 'admin@star.com', role: 'ADMIN', senha: 'admin123', telefone: '(11) 99999-9999', cpf: '000.000.000-00', percentual_comissao: 1.5 },
-    { id: 'u-2', nome: 'Carlos Sales', email: 'carlos@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 98888-7777', cpf: '123.456.789-10', percentual_comissao: 1.5 },
-    { id: 'u-3', nome: 'Mariana Costa', email: 'mariana@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 97777-6666', cpf: '987.654.321-20', percentual_comissao: 2.0 },
-    { id: 'u-4', nome: 'Juliana Santos', email: 'juliana@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 96666-5555', cpf: '456.789.123-30', percentual_comissao: 1.8 }
-  ],
-  leads: [
     {
-      id: 'l-1',
-      nome: 'Marcos Oliveira',
-      telefone: '(11) 91111-2222',
-      email: 'marcos@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 500k',
-      valor_estimado: 500000,
-      status: 'Vendido',
-      vendedor_id: 'u-2',
-      notas: 'Lead muito interessado na aquisição de imóvel comercial. Compra efetuada.',
-      data_criacao: '2026-05-10T14:30:00Z'
-    },
-    {
-      id: 'l-2',
-      nome: 'Renata Abreu',
-      telefone: '(11) 92222-3333',
-      email: 'renata@email.com',
-      produto_interesse: 'Consórcio Veicular - R$ 120k',
-      valor_estimado: 120000,
-      status: 'Conexão',
-      vendedor_id: 'u-3',
-      notas: 'Enviada simulação da parcela de R$ 900. Aguardando retorno sobre lance embutido.',
-      data_criacao: '2026-05-20T10:15:00Z'
-    },
-    {
-      id: 'l-3',
-      nome: 'Davi Lima',
-      telefone: '(11) 93333-4444',
-      email: 'davi@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 350k',
-      valor_estimado: 350000,
-      status: 'Proposta Enviada',
-      vendedor_id: 'u-4',
-      notas: 'Proposta de cota enviada pelo WhatsApp. Cliente analisando forma de pagamento.',
-      data_criacao: '2026-06-01T16:45:00Z'
-    },
-    {
-      id: 'l-4',
-      nome: 'Lucas Souza',
-      telefone: '(11) 94444-5555',
-      email: 'lucas@email.com',
-      produto_interesse: 'Consórcio Caminhões - R$ 250k',
-      valor_estimado: 250000,
-      status: 'Conexão',
-      vendedor_id: 'u-2',
-      notas: 'Primeiro contato telefônico efetuado. Interesse para renovação de frota de frete.',
-      data_criacao: '2026-06-03T09:00:00Z'
-    },
-    {
-      id: 'l-5',
-      nome: 'Clara Mendes',
-      telefone: '(11) 95555-6666',
-      email: 'clara@email.com',
-      produto_interesse: 'Consórcio Veicular - R$ 80k',
-      valor_estimado: 80000,
-      status: 'Novo',
-      vendedor_id: null,
-      notas: 'Lead captado via campanha do Instagram de Consórcio de Automóveis.',
-      data_criacao: '2026-06-05T18:20:00Z'
-    },
-    {
-      id: 'l-6',
-      nome: 'Patricia Rocha',
-      telefone: '(11) 96666-7777',
-      email: 'patricia@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 600k',
-      valor_estimado: 600000,
-      status: 'Perdido',
-      vendedor_id: 'u-3',
-      notas: 'Cliente desistiu do investimento pois decidiu financiar diretamente com FGTS.',
-      data_criacao: '2026-05-15T11:00:00Z'
-    },
-    {
-      id: 'l-7',
-      nome: 'Guilherme Santos',
-      telefone: '(11) 97777-8888',
-      email: 'guilherme@email.com',
-      produto_interesse: 'Consórcio de Motos - R$ 30k',
-      valor_estimado: 30000,
-      status: 'Novo',
-      vendedor_id: null,
-      notes: 'Interessado em adquirir cota de R$ 30.000 para compra de moto esportiva.',
-      data_criacao: '2026-06-06T11:45:00Z'
-    } as any
-  ],
-  interacoes: [
-    {
-      id: 'i-1',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'Ligação',
-      observacao: 'Ligação inicial efetuada. Cliente explicou que deseja carta de R$ 500k com parcela máxima de R$ 2.500.',
-      data_interacao: '2026-05-11T10:00:00Z'
-    },
-    {
-      id: 'i-2',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'WhatsApp',
-      observacao: 'Envio de simulações com Administradoras Porto Seguro e Embracon.',
-      data_interacao: '2026-05-12T14:30:00Z'
-    },
-    {
-      id: 'i-3',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'Reunião',
-      observacao: 'Reunião presencial no escritório. Cliente assinou o contrato de adesão da cota contemplada.',
-      data_interacao: '2026-05-14T16:00:00Z'
-    },
-    {
-      id: 'i-4',
-      lead_id: 'l-2',
-      vendedor_id: 'u-3',
-      tipo: 'WhatsApp',
-      observacao: 'Apresentação das tabelas e taxa de administração. Cliente achou a parcela barata comparada ao juro do financiamento.',
-      data_interacao: '2026-05-21T11:20:00Z'
-    },
-    {
-      id: 'i-5',
-      lead_id: 'l-3',
-      vendedor_id: 'u-4',
-      tipo: 'E-mail',
-      observacao: 'Envio da tabela de lances médios dos últimos 6 meses para comprovar viabilidade de contemplação rápida.',
-      data_interacao: '2026-06-02T15:00:00Z'
+      id: 'u-1',
+      nome: 'Administrador Geral',
+      email: 'admin',
+      role: 'ADMIN',
+      senha: 'admin@123',
+      telefone: '(11) 99999-9999',
+      cpf: '000.000.000-00',
+      percentual_comissao: 1.5
     }
   ],
-  vendas: [
-    {
-      id: 'v-1',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      cliente: 'Marcos Oliveira',
-      produto: 'Consórcio Imobiliário - R$ 500k',
-      valor_venda: 500000,
-      percentual_comissao: 1.5,
-      valor_comissao: 7500,
-      data_venda: '2026-05-14T17:00:00Z',
-      status_comissao: 'Pago'
-    }
-  ],
+  leads: [],
+  interacoes: [],
+  vendas: [],
   configuracoes: {
-    empresa: 'Star Consórcios',
-    logo: '',
-    percentual_padrao: 1.5,
-    distribuicao_automatica: false
+    "empresa": "Star Consórcios",
+    "logo": "",
+    "percentual_padrao": 1.5,
+    "distribuicao_automatica": false
   }
 };
 
@@ -323,7 +190,7 @@ async function startServer() {
   }
 
   app.post('/api/leads', (req, res) => {
-    const { nome, telefone, email, produto_interesse, valor_estimado, status, vendedor_id, notas } = req.body;
+    const { nome, telefone, email, produto_interesse, valor_estimado, status, vendedor_id, notas, force_unassigned } = req.body;
     if (!nome) {
       return res.status(400).json({ error: 'Nome do cliente é obrigatório.' });
     }
@@ -342,7 +209,7 @@ async function startServer() {
     };
 
     // If auto distribution is enabled and no vendor is explicitly selected, distribute it
-    if (db.configuracoes.distribuicao_automatica && !newLead.vendedor_id) {
+    if (db.configuracoes.distribuicao_automatica && !newLead.vendedor_id && !force_unassigned) {
       const assignedId = distributeLeadAutomatically(newLead, db);
       if (assignedId) {
         newLead.vendedor_id = assignedId;

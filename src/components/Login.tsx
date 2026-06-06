@@ -60,11 +60,6 @@ export default function Login({ onLoginSuccess }: LoginProps) {
     }
   };
 
-  const fillQuickCredentials = (eMail: string, pass: string) => {
-    setEmail(eMail);
-    setSenha(pass);
-    setError('');
-  };
 
   return (
     <div id="login-screen-root" className="flex min-h-screen items-center justify-center bg-slate-900 px-4 py-12 sm:px-6 lg:px-8">
@@ -99,7 +94,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
               {/* Email */}
               <div>
                 <label htmlFor="login-email" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  E-mail institucional
+                  Usuário ou E-mail
                 </label>
                 <div className="relative mt-1">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
@@ -107,12 +102,12 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                   </span>
                   <input
                     id="login-email"
-                    type="email"
+                    type="text"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="block w-full rounded-xl bg-slate-950 border border-slate-700/65 py-2.5 pl-10 pr-4 text-sm text-white placeholder-slate-500 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/30 focus:outline-hidden transition"
-                    placeholder="exemplo@starconsorcios.com"
+                    placeholder="Nome de usuário ou e-mail"
                   />
                 </div>
               </div>
@@ -149,32 +144,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
             </button>
           </form>
 
-          {/* Quick Logins for easy validation with single click */}
-          <div className="pt-4 border-t border-slate-700/50">
-            <h5 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest text-center mb-3">
-              Acesso Rápido para Testes
-            </h5>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                id="btn-quick-admin"
-                type="button"
-                onClick={() => fillQuickCredentials('admin@star.com', 'admin123')}
-                className="flex flex-col items-center justify-center rounded-lg border border-slate-700 bg-slate-900/40 p-2 text-center text-xs text-blue-300 hover:bg-slate-700/80 transition"
-              >
-                <span className="font-bold">Perfil Admin</span>
-                <span className="text-[9px] text-slate-500">Administrador Geral</span>
-              </button>
-              <button
-                id="btn-quick-vendor"
-                type="button"
-                onClick={() => fillQuickCredentials('carlos@star.com', 'vend123')}
-                className="flex flex-col items-center justify-center rounded-lg border border-slate-700 bg-slate-900/40 p-2 text-center text-xs text-blue-300 hover:bg-slate-700/80 transition"
-              >
-                <span className="font-bold">Perfil Vendedor</span>
-                <span className="text-[9px] text-slate-500">Carlos Sales</span>
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

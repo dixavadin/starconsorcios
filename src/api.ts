@@ -8,153 +8,20 @@ import { User, Lead, Interacao, Venda, Configuracoes, LeadStatus, InteracaoTipo,
 // Standard Default Database Seeds (same as server.ts)
 const DEFAULT_SEED: DatabaseState = {
   users: [
-    { id: 'u-1', nome: 'Admin Geral', email: 'admin@star.com', role: 'ADMIN', senha: 'admin123', telefone: '(11) 99999-9999', cpf: '000.000.000-00', percentual_comissao: 1.5 },
-    { id: 'u-2', nome: 'Carlos Sales', email: 'carlos@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 98888-7777', cpf: '123.456.789-10', percentual_comissao: 1.5 },
-    { id: 'u-3', nome: 'Mariana Costa', email: 'mariana@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 97777-6666', cpf: '987.654.321-20', percentual_comissao: 2.0 },
-    { id: 'u-4', nome: 'Juliana Santos', email: 'juliana@star.com', role: 'VENDEDOR', senha: 'vend123', telefone: '(11) 96666-5555', cpf: '456.789.123-30', percentual_comissao: 1.8 }
-  ],
-  leads: [
     {
-      id: 'l-1',
-      nome: 'Marcos Oliveira',
-      telefone: '(11) 91111-2222',
-      email: 'marcos@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 500k',
-      valor_estimado: 500000,
-      status: 'Vendido',
-      vendedor_id: 'u-2',
-      notas: 'Lead muito interessado na aquisição de imóvel comercial. Compra efetuada.',
-      data_criacao: '2026-05-10T14:30:00Z'
-    },
-    {
-      id: 'l-2',
-      nome: 'Renata Abreu',
-      telefone: '(11) 92222-3333',
-      email: 'renata@email.com',
-      produto_interesse: 'Consórcio Veicular - R$ 120k',
-      valor_estimado: 120000,
-      status: 'Conexão',
-      vendedor_id: 'u-3',
-      notas: 'Enviada simulação da parcela de R$ 900. Aguardando retorno sobre lance embutido.',
-      data_criacao: '2026-05-20T10:15:00Z'
-    },
-    {
-      id: 'l-3',
-      nome: 'Davi Lima',
-      telefone: '(11) 93333-4444',
-      email: 'davi@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 350k',
-      valor_estimado: 350000,
-      status: 'Proposta Enviada',
-      vendedor_id: 'u-4',
-      notas: 'Proposta de cota enviada pelo WhatsApp. Cliente analisando forma de pagamento.',
-      data_criacao: '2026-06-01T16:45:00Z'
-    },
-    {
-      id: 'l-4',
-      nome: 'Lucas Souza',
-      telefone: '(11) 94444-5555',
-      email: 'lucas@email.com',
-      produto_interesse: 'Consórcio Caminhões - R$ 250k',
-      valor_estimado: 250000,
-      status: 'Conexão',
-      vendedor_id: 'u-2',
-      notas: 'Primeiro contato telefônico efetuado. Interesse para renovação de frota de frete.',
-      data_criacao: '2026-06-03T09:00:00Z'
-    },
-    {
-      id: 'l-5',
-      nome: 'Clara Mendes',
-      telefone: '(11) 95555-6666',
-      email: 'clara@email.com',
-      produto_interesse: 'Consórcio Veicular - R$ 80k',
-      valor_estimado: 80000,
-      status: 'Novo',
-      vendedor_id: null,
-      notas: 'Lead captado via campanha do Instagram de Consórcio de Automóveis.',
-      data_criacao: '2026-06-05T18:20:00Z'
-    },
-    {
-      id: 'l-6',
-      nome: 'Patricia Rocha',
-      telefone: '(11) 96666-7777',
-      email: 'patricia@email.com',
-      produto_interesse: 'Consórcio Imobiliário - R$ 600k',
-      valor_estimado: 600000,
-      status: 'Perdido',
-      vendedor_id: 'u-3',
-      notas: 'Cliente desistiu do investimento pois decidiu financiar diretamente com FGTS.',
-      data_criacao: '2026-05-15T11:00:00Z'
-    },
-    {
-      id: 'l-7',
-      nome: 'Guilherme Santos',
-      telefone: '(11) 97777-8888',
-      email: 'guilherme@email.com',
-      produto_interesse: 'Consórcio de Motos - R$ 30k',
-      valor_estimado: 30000,
-      status: 'Novo',
-      vendedor_id: null,
-      notas: 'Interessado em adquirir cota de R$ 30.000 para compra de moto esportiva.',
-      data_criacao: '2026-06-06T11:45:00Z'
+      id: 'u-1',
+      nome: 'Administrador Geral',
+      email: 'admin',
+      role: 'ADMIN',
+      senha: 'admin@123',
+      telefone: '(11) 99999-9999',
+      cpf: '000.000.000-00',
+      percentual_comissao: 1.5
     }
   ],
-  interacoes: [
-    {
-      id: 'i-1',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'Ligação',
-      observacao: 'Ligação inicial efetuada. Cliente explicou que deseja carta de R$ 500k com parcela máxima de R$ 2.500.',
-      data_interacao: '2026-05-11T10:00:00Z'
-    },
-    {
-      id: 'i-2',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'WhatsApp',
-      observacao: 'Envio de simulações com Administradoras Porto Seguro e Embracon.',
-      data_interacao: '2026-05-12T14:30:00Z'
-    },
-    {
-      id: 'i-3',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      tipo: 'Reunião',
-      observacao: 'Reunião presencial no escritório. Cliente assinou o contrato de adesão da cota contemplada.',
-      data_interacao: '2026-05-14T16:00:00Z'
-    },
-    {
-      id: 'i-4',
-      lead_id: 'l-2',
-      vendedor_id: 'u-3',
-      tipo: 'WhatsApp',
-      observacao: 'Apresentação das tabelas e taxa de administração. Cliente achou a parcela barata comparada ao juro do financiamento.',
-      data_interacao: '2026-05-21T11:20:00Z'
-    },
-    {
-      id: 'i-5',
-      lead_id: 'l-3',
-      vendedor_id: 'u-4',
-      tipo: 'E-mail',
-      observacao: 'Envio da tabela de lances médios dos últimos 6 meses para comprovar viabilidade de contemplação rápida.',
-      data_interacao: '2026-06-02T15:00:00Z'
-    }
-  ],
-  vendas: [
-    {
-      id: 'v-1',
-      lead_id: 'l-1',
-      vendedor_id: 'u-2',
-      cliente: 'Marcos Oliveira',
-      produto: 'Consórcio Imobiliário - R$ 500k',
-      valor_venda: 500000,
-      percentual_comissao: 1.5,
-      valor_comissao: 7500,
-      data_venda: '2026-05-14T17:00:00Z',
-      status_comissao: 'Pago'
-    }
-  ],
+  leads: [],
+  interacoes: [],
+  vendas: [],
   configuracoes: {
     empresa: 'Star Consórcios',
     logo: '',
@@ -168,16 +35,67 @@ const STORAGE_KEY = 'star_db_store';
 // Helper to initialize and get Local DB
 function getLocalDB(): DatabaseState {
   const store = localStorage.getItem(STORAGE_KEY);
+  let db: DatabaseState;
+  
+  // Clean all legacy test database entries if old seed config is found
+  if (store && (store.includes('admin@star.com') || store.includes('carlos@star.com'))) {
+    localStorage.removeItem('star_user');
+    db = DEFAULT_SEED;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    return db;
+  }
+
   if (!store) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEED));
-    return DEFAULT_SEED;
+    db = DEFAULT_SEED;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    return db;
   }
   try {
-    return JSON.parse(store) as DatabaseState;
+    db = JSON.parse(store) as DatabaseState;
   } catch {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEED));
-    return DEFAULT_SEED;
+    db = DEFAULT_SEED;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    return db;
   }
+
+  // Automatic clean transition migration for pre-existing client localStorages
+  let migrated = false;
+  if (db.leads) {
+    db.leads = db.leads.map(lead => {
+      let pi = lead.produto_interesse || '';
+      if (pi.includes('Imobiliário')) {
+        pi = 'Imóvel';
+        migrated = true;
+      } else if (pi.includes('Veicular') || pi.includes('Caminhões') || pi.includes('Automóveis') || pi.includes('Geral')) {
+        pi = 'Veículo';
+        migrated = true;
+      } else if (pi.includes('Moto')) {
+        pi = 'Moto';
+        migrated = true;
+      }
+      return { ...lead, produto_interesse: pi };
+    });
+  }
+  if (db.vendas) {
+    db.vendas = db.vendas.map(venda => {
+      let p = venda.produto || '';
+      if (p.includes('Imobiliário')) {
+        p = 'Imóvel';
+        migrated = true;
+      } else if (p.includes('Veicular') || p.includes('Caminhões') || p.includes('Automóveis')) {
+        p = 'Veículo';
+        migrated = true;
+      } else if (p.includes('Moto')) {
+        p = 'Moto';
+        migrated = true;
+      }
+      return { ...venda, produto: p };
+    });
+  }
+  if (migrated) {
+    saveLocalDB(db);
+  }
+  return db;
 }
 
 function saveLocalDB(db: DatabaseState) {
@@ -360,7 +278,7 @@ export const api = {
     }
   },
 
-  async createLead(data: Partial<Lead>): Promise<Lead> {
+  async createLead(data: Partial<Lead> & { force_unassigned?: boolean }): Promise<Lead> {
     try {
       return await fetchAPI<Lead>('/api/leads', {
         method: 'POST',
@@ -382,7 +300,7 @@ export const api = {
       };
 
       // Automatic round robin if configured
-      if (db.configuracoes.distribuicao_automatica && !newLead.vendedor_id) {
+      if (db.configuracoes.distribuicao_automatica && !newLead.vendedor_id && !data.force_unassigned) {
         const activeVendors = db.users.filter(u => u.role === 'VENDEDOR');
         if (activeVendors.length > 0) {
           const activeStates: LeadStatus[] = ['Novo', '1 a 3 dias', '4 a 7 dias', 'Última Tentativa', 'Conexão', 'Proposta Enviada', 'Ação Futura'];
