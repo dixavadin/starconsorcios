@@ -1,0 +1,6 @@
+{
+  "name": "Star Consórcios",
+  "description": "Sistema de Gestão de Vendas de Consórcios, Leads, Vendedores, Comissões e Relatórios Gerenciais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
